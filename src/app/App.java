@@ -6,7 +6,6 @@ import app.services.DataService;
 
 import java.util.List;
 import java.util.Scanner;
-import java.util.concurrent.atomic.AtomicInteger;
 
 public class App {
 
@@ -31,7 +30,7 @@ public class App {
 
         for (Product product : list)
             System.out.println(count.getAndIncrement() + ") " +
-                    product.getName() + ", USD " + product.getPrice());
+                    product.name() + ", USD " + product.price());
     }
 
     private static void getOutput(List<Product> list, double priceSearch, int index) {
@@ -39,7 +38,7 @@ public class App {
         if (index == -1)
             System.out.print("No data.\n");
         else
-            System.out.print("Product: " + list.get(index).getName() +
+            System.out.print("Product: " + list.get(index).name() +
                     ", USD " + priceSearch + "\n");
     }
 }
