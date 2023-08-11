@@ -6,6 +6,7 @@ import app.services.DataService;
 
 import java.util.List;
 import java.util.Scanner;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class App {
 
@@ -27,9 +28,9 @@ public class App {
 
     private static void getOutput(List<Product> list) {
         System.out.print("Initial data:\n");
-
+        AtomicInteger counter = new AtomicInteger(1);
         for (Product product : list)
-            System.out.println(count.getAndIncrement() + ") " +
+            System.out.println(counter.getAndIncrement() + ") " +
                     product.name() + ", USD " + product.price());
     }
 
